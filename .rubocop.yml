@@ -1,0 +1,25 @@
+inherit_gem:
+  ragnarson-stylecheck: config/rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 2.5
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+Rails:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: required
+Metrics/MethodLength:
+  Max: 15
+Metrics/ClassLength:
+  Max: 150
+Metrics/ModuleLength:
+  Max: 180
+Metrics/CyclomaticComplexity:
+  Max: 7
