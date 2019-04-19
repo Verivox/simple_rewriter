@@ -27,7 +27,18 @@ SimpleRewriter.call(
     { email_field: :email },
     { address_field: :address },
     { hash_field: [:deep, :detect_type] },
-    { remote_file_urls: { sample_pdf: true, default: [] } # carrierwave support
+    { remote_file_urls: { sample_pdf: true, default: [] }, # carrierwave support
+    { hash: [
+        :deep,
+        {
+          deep_attributes_map: [
+            { zip: :zip },
+            { street: :street },
+            { name: [:first_name, :last_name] }
+          ]
+        }
+      ] 
+    }
   ]
 )
 ```
